@@ -5,7 +5,8 @@ import logoImage from "../../public/Planet Arcadia (1)_1.png";
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 
 //const music = new Audio('../src/assets/TheFatRat - Windfall (online-audio-converter.com).mp3');
-const music = new Audio("../src/assets/audio.mp3");
+// const music = new Audio("../src/assets/audio.mp3");
+const music = new Audio("../../public/assets/audio.mp3");
 
 const AudioPlay = () => {
     const play = document.getElementById('play');
