@@ -1,0 +1,12 @@
+1. 背景動画の上下に余白ができていた
+「index.css」の"header .masthead"と"@media (min-width: 768px) → header.masthead"のpadding-topを消すと解消された
+
+
+
+
+
+【To-Do】
+1. タイトルの文字をウィンドウサイズで変更(現状：縦サイズが小さくなるとはみ出してしまう)
+
+常陽銀行app
+2. 条件リストのlift値をテストデータの時は、testでーたのlift値にする
