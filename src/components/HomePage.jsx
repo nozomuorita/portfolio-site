@@ -3,7 +3,9 @@ import reactImage from "../Images/react.png";
 import jsImage from "../Images/js.png";
 import firebaseImage from "../Images/firebase.jpg";
 import profileImage from "../Images/sibainu.jpg";
-import video from '../assets/skyscrapers_-_98151 (720p).mp4';
+//import video from '../assets/skyscrapers_-_98151 (720p).mp4';
+// import video from '../../public /skyscrapers_-_98151 (720p).mp4';
+import video from '../../public/skyscrapers_-_98151 (720p)-24b0a77a.mp4'
 import portfolio1 from "../assets/portfolio/1.jpg";
 import portfolio2 from "../assets/portfolio/2.jpg";
 import portfolio3 from "../assets/portfolio/3.jpg";
