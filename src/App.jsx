@@ -9,16 +9,10 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Router>
       <div className='App'>
         <Header />
-
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/blog' element={<BlogPage />} />
-        </Routes>
+        <HomePage />
       </div>
-    </Router>
   )
 }
 
