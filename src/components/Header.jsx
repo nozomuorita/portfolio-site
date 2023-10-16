@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import logoImage from "../../public/Planet Arcadia (1)_1.png";
-//import audio from "../../public/audio.mp3";
+import audio from "../../public/audio.mp3";
 
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 
 //const music = new Audio('../src/assets/TheFatRat - Windfall (online-audio-converter.com).mp3');
-const music = new Audio("../src/assets/audio.mp3");
+// const music = new Audio("../src/assets/audio.mp3");
+const music = new Audio("../../public/audio.mp3");
+
 //const music = new Audio(<audio />)
 
 const AudioPlay = () => {

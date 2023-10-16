@@ -1,4 +1,8 @@
 import React from 'react'
+import horse from "../../assets/horse.jpg";
+import high_school from "../../assets/high-school.jpg";
+import ibadai from "../../assets/ibadai.jpg";
+
 
 function About() {
   return (
@@ -12,7 +16,8 @@ function About() {
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../public/horse.jpg" alt="..." /></div>
+                        {/* <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../public/horse.jpg" alt="..." /></div> */}
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src={horse} /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>出身地</h4>
@@ -22,7 +27,7 @@ function About() {
                         </div>
                     </li>
                     <li className='timeline-inverted'>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../public/high-school.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src={high_school} alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2016-2019</h4>
@@ -32,7 +37,7 @@ function About() {
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="./ibadai.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src={ibadai} alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2019~2023</h4>
@@ -42,7 +47,7 @@ function About() {
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="./ibadai.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src={ibadai} alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2023~</h4>
