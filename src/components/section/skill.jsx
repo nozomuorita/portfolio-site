@@ -120,7 +120,7 @@ function skill() {
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
-                <img src="../../src/assets/img/nadeshiko.png" className='nadesiko-icon' />
+                <img src="../../public/nadeshiko.png" className='nadesiko-icon' />
                     {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
