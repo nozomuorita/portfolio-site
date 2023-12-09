@@ -43,7 +43,7 @@ function About() {
                                 <h4>2019~2023</h4>
                                 <h4 class="subheading">茨城大学</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">工学部機械システム工学科</p></div>
+                            <div class="timeline-body"><p class="text-muted">工学部機械システム工学科<br></br>・機械学習・プログラミングの勉強に力を入れて取り組みました！<br></br>・機械学習ではデータを取得し、前処理をするところからモデルを評価するまでの一連の流れについて学ぶことができました。</p></div>
                         </div>
                     </li>
                     <li class="timeline-inverted">
@@ -53,7 +53,7 @@ function About() {
                                 <h4>2023~</h4>
                                 <h4 class="subheading">茨城大学大学院</h4>
                             </div>
-                            <div class="timeline-body"><p class="text-muted">理工学研究科機械システム工学専攻</p></div>
+                            <div class="timeline-body"><p class="text-muted">理工学研究科機械システム工学専攻<br></br>・研究活動と競技プログラミングに力を入れて取り組みました！<br></br>・競プロを通してアルゴリズムに関する知識・実装力を身に付けました。</p></div>
                         </div>
                     </li>
                     {/* <li class="timeline-inverted">
