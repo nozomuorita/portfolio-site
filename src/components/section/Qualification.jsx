@@ -18,7 +18,7 @@ function Qualification() {
                     <h3 class="section-subheading text-muted">These are the certifications I have earned so far.</h3>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4 card" style={{backgroundColor: 'red'}}>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
                         <div class="card__imgframe"><img src={abacus} class="qual-img" /></div>
                         <div class="card__textbox">
                             <div class="card__titletext">
@@ -29,7 +29,7 @@ function Qualification() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 card" style={{backgroundColor: 'red'}}>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
                         <div class="card__imgframe"><img src={abacus} class="qual-img" /></div>
                         <div class="card__textbox">
                             <div class="card__titletext">
@@ -40,7 +40,7 @@ function Qualification() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 card" style={{backgroundColor: 'red'}}>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
                         <div class="card__imgframe"><img src={abacus} class="qual-img" /></div>
                         <div class="card__textbox">
                             <div class="card__titletext">
@@ -51,7 +51,7 @@ function Qualification() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 card" style={{backgroundColor: 'red'}}>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
                         <div class="card__imgframe"><img src={kanken} class="qual-img" /></div>
                         <div class="card__textbox">
                             <div class="card__titletext">
@@ -62,7 +62,7 @@ function Qualification() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 card" style={{backgroundColor: 'red'}}>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
                         <div class="card__imgframe"><img src={eiken} class="qual-img" /></div>
                         <div class="card__textbox">
                             <div class="card__titletext">
@@ -73,7 +73,7 @@ function Qualification() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 card" style={{backgroundColor: 'red'}}>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
                         <div class="card__imgframe"><DirectionsCarIcon className='material-ui' style={{fontSize: '200px', margin: 'auto'}}/></div>
                         <div class="card__textbox">
                             <div class="card__titletext">
@@ -84,7 +84,7 @@ function Qualification() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 card" style={{backgroundColor: 'red'}}>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
                         <div class="card__imgframe"><img src={toeic} class="qual-img" /></div>
                         <div class="card__textbox">
                             <div class="card__titletext">
@@ -95,7 +95,7 @@ function Qualification() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 card" style={{backgroundColor: 'red'}}>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
                         <div class="card__imgframe"><img src={g} class="qual-img" /></div>
                         <div class="card__textbox">
                             <div class="card__titletext">

@@ -12,7 +12,17 @@ function About() {
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">趣味は競技プログラミングとWebサイト、アプリ制作です。AtCoderやってます！</h3>
+                    <h3 class="section-subheading text-muted">趣味は競技プログラミングとWebサイト、アプリ制作です。AtCoderやってます！<br></br>最近、Vimにハマっています！</h3>
+                    <h3 class="section-subheading text-muted">
+                        <ul>
+                            <li>AtCoderアカウント: <a href='https://atcoder.jp/users/nzm_ort' target='_blank'>https://atcoder.jp/users/nzm_ort</a></li>
+                            <li>CodeForcesアカウント: <a href='https://codeforces.com/profile/nzm_ort' target='_blank'>https://codeforces.com/profile/nzm_ort</a></li>
+                            <li>Xアカウント: <a href='https://twitter.com/account_0818' target='_blank'>https://twitter.com/account_0818</a></li>
+                            <li>Qiitaアカウント: <a href='https://qiita.com/nzmort1' target='_blank'>https://qiita.com/nzmort1</a></li>
+                            <li>Noteアカウント: <a href='https://note.com/lorem_0818' target='_blank'>https://note.com/lorem_0818</a></li>
+                            
+                        </ul>
+                    </h3>
                 </div>
                 <ul class="timeline">
                     <li>
