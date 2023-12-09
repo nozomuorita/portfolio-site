@@ -135,23 +135,13 @@ function Portfolio() {
                                 <div class="modal-body">
                                     {/* <!-- Project details--> */}
                                     <h2 class="text-uppercase">Visualization Web App</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p class="item-intro text-muted">データ分析の結果を可視化グラフ化して可視化することができるWebアプリケーションです</p>
                                     <img class="img-fluid d-block mx-auto" src={fig1} alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>ユーザーは左のSettingでパラメータを指定することで、条件にあったデータを様々な形式で可視化できます。<br></br>Pythonのみで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/visualization-web-app' target='_blank'>https://github.com/nozomuorita/visualization-web-app</a></p>
                                     <div>
                                         <p>Tools</p>
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" className='modal-img' />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" className='modal-img' />
                                     </div>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
-                                        </li>
-                                    </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
@@ -176,21 +166,11 @@ function Portfolio() {
                                     <h2 class="text-uppercase">AtData</h2>
                                     <p class="item-intro text-muted">AtCoderの学習状況を可視化するWebアプリです。</p>
                                     <img class="img-fluid d-block mx-auto" src={fig2} alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>AtCoderでまだ解けていない問題を表示したり、ライバルとコンテストでの成績を比較したりできます。<br></br>PythonのDashで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/atdata' target='_blank'>https://github.com/nozomuorita/atdata</a></p>
                                     <div>
                                         <p>Tools</p>
-                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" className='modal-img' />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" className='modal-img' />
                                     </div>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
-                                        </li>
-                                    </ul>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project

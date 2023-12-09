@@ -12,7 +12,7 @@ function About() {
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">My background, etc.</h3>
+                    <h3 class="section-subheading text-muted">趣味は競技プログラミングとWebサイト、アプリ制作です。AtCoderやってます！</h3>
                 </div>
                 <ul class="timeline">
                     <li>
