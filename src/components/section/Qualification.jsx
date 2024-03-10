@@ -66,7 +66,7 @@ function Qualification() {
                         <div class="card__imgframe"><img src={eiken} class="qual-img" /></div>
                         <div class="card__textbox">
                             <div class="card__titletext">
-                                実用英語技能検定
+                                実用英語技能検定２級
                             </div>
                             <div class="card__overviewtext">
                                 2018年2月取得

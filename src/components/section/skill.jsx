@@ -18,7 +18,7 @@ function skill() {
                     <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">Python</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">研究活動や趣味で機械学習やデータ分析、データ取得、<br></br>Webアプリケーション作成を行った経験あり</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -27,7 +27,7 @@ function skill() {
                     <i class="fas fa-laptop fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">React</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">趣味でWebサイトやWebアプリ作成に使用した経験あり。<br></br>本サイトもReactを用いて作成</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -36,7 +36,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">Three.js</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">趣味でWebサイト作成に使用した経験あり。<br></br>「Prtfolio design」に使用。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -45,7 +45,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">HTML</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">趣味でWebサイトやWebアプリ作成に使用した経験あり。<br></br>本サイトもReactを用いて作成</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -54,7 +54,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">CSS</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">趣味でWebサイトやWebアプリ作成に使用した経験あり。<br></br>本サイトもReactを用いて作成</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -63,7 +63,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">JavaScript</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">拡張機能の作成やWebサイト作成に使用経験あり。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -72,7 +72,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">Github</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">コード管理に使用。<br></br>また、Webサイト・アプリのデプロイにGithub Pagesを使用。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -81,7 +81,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">VSCode</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">エディタとして使用。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -90,7 +90,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">R</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">研究活動の一部で使用経験あり。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -99,7 +99,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">LATEX</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">論文執筆時に使用した経験あり。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -108,7 +108,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">C</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">大学の講義で使用経験あり。<br></br>また、センサから情報を読み取りロボットを動かすなどに<br></br>使用した経験あり。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -117,7 +117,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">C++</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">競技プログラミングで使用。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -126,7 +126,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">なでしこ</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">日本語でプログラミングができるのが面白いと思い触った経験あり。<br></br>簡単な操作であれば可能。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
@@ -134,7 +134,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">Vim</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <p class="text-muted">なんか使えたらかっこいいんじゃないかと思い、たまに使っています。VSCodeと併用。</p>
             </div>
 
           </div>

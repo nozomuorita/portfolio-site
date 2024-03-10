@@ -236,3 +236,13 @@ img {
 #skill button {
   margin-bottom: 100px;
 } */
+
+.accountUrl{
+  list-style: none;
+}
+.conf{
+  margin-top: 50px;
+}
+.ncsp{
+  max-width: 20vw;
+}
