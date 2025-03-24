@@ -4,6 +4,7 @@ import kanken from "../../assets/qualification/kanken.gif";
 import eiken from "../../assets/qualification/eiken.jpg";
 import toeic from "../../assets/qualification/toeic.jpeg";
 import g from "../../assets/qualification/g.png";
+import ipa from "../../assets/qualification/ipa.jpg";
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 
 
@@ -15,7 +16,7 @@ function Qualification() {
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Qualifications</h2>
-                    <h3 class="section-subheading text-muted">These are the certifications I have earned so far.</h3>
+                    <h3 class="section-subheading text-muted">Qualifications to date</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4 card">
@@ -103,6 +104,28 @@ function Qualification() {
                             </div>
                             <div class="card__overviewtext">
                                 2023年3月取得
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
+                        <div class="card__imgframe"><img src={ipa} class="qual-img" /></div>
+                        <div class="card__textbox">
+                            <div class="card__titletext">
+                                基本情報技術者
+                            </div>
+                            <div class="card__overviewtext">
+                                2024年8月取得
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 card">
+                        <div class="card__imgframe"><img src={ipa} class="qual-img" /></div>
+                        <div class="card__textbox">
+                            <div class="card__titletext">
+                                応用情報技術者
+                            </div>
+                            <div class="card__overviewtext">
+                                2024年12月取得
                             </div>
                         </div>
                     </div>
