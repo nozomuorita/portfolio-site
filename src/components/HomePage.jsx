@@ -35,7 +35,7 @@ function HomePage() {
   return (
     <>
       <header class="masthead" id='top'>
-        <video autoPlay loop muted className='video'>
+        <video autoPlay loop muted playsInline className='video'>
           <source src={video} type='video/mp4' />
         </video>
 
