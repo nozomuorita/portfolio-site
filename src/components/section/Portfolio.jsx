@@ -4,7 +4,8 @@ import portfolio3 from "../../assets/portfolio/3.jpg";
 import portfolio4 from "../../assets/portfolio/4.jpg";
 import portfolio5 from "../../assets/portfolio/5.jpg";
 import portfolio6 from "../../assets/portfolio/6.jpg";
-import fig1 from "../../assets/portfolio/portfolio1.png";
+// import fig1 from "../../assets/portfolio/portfolio1.png";
+import fig1 from "../../assets/portfolio/app.png";
 import fig2 from "../../assets/portfolio/portfolio2.png";
 import fig3 from "../../assets/portfolio/portfolio3.png";
 import fig4 from "../../assets/portfolio/portfolio4.png";
@@ -21,7 +22,7 @@ function Portfolio() {
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">What I have created so far.<br></br>Click to see details.</h3>
+                    <h3 class="section-subheading text-muted">Click to see details.</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -50,7 +51,7 @@ function Portfolio() {
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">AtData</div>
-                                <div class="portfolio-caption-subheading text-muted">AtCoderでの学習状況を確認することができるWebアプリケーションです。</div>
+                                <div class="portfolio-caption-subheading text-muted">AtCoderでの学習状況を確認できるWebアプリケーションです。</div>
                             </div>
                         </div>
                     </div>
@@ -80,7 +81,7 @@ function Portfolio() {
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">AtCoder Review Bot</div>
-                                <div class="portfolio-caption-subheading text-muted">AtCoderの問題で復習するべき問題をレコメンドします</div>
+                                <div class="portfolio-caption-subheading text-muted">AtCoderの問題で復習するべき問題をおすすめするツールです</div>
                             </div>
                         </div>
                     </div>
@@ -152,9 +153,9 @@ function Portfolio() {
                                 <div class="modal-body">
                                     {/* <!-- Project details--> */}
                                     <h2 class="text-uppercase">Visualization Web App</h2>
-                                    <p class="item-intro text-muted">データ分析の結果を可視化グラフ化して可視化することができるWebアプリケーションです</p>
+                                    <p class="item-intro text-muted">研究活動で作成した分析ツールです</p>
                                     <img class="img-fluid d-block mx-auto" src={fig1} alt="..." />
-                                    <p>ユーザーは左のSettingでパラメータを指定することで、条件にあったデータを様々な形式で可視化できます。<br></br>Pythonのみで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/visualization-web-app' target='_blank'>https://github.com/nozomuorita/visualization-web-app</a></p>
+                                    <p>金融分野における資産運用業務（投資局面の判断）に活用することができます．<br></br>Pythonのみで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/visualization-web-app' target='_blank'>https://github.com/nozomuorita/visualization-web-app</a></p>
                                     <div>
                                         <p>Tools</p>
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" className='modal-img' />
@@ -183,7 +184,7 @@ function Portfolio() {
                                     <h2 class="text-uppercase">AtData</h2>
                                     <p class="item-intro text-muted">AtCoderの学習状況を可視化するWebアプリです。</p>
                                     <img class="img-fluid d-block mx-auto" src={fig2} alt="..." />
-                                    <p>AtCoderでまだ解けていない問題を表示したり、ライバルとコンテストでの成績を比較したりできます。<br></br>PythonのDashで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/atdata' target='_blank'>https://github.com/nozomuorita/atdata</a></p>
+                                    <p>AtCoderでまだ解けていない問題を表示したり、ライバルとコンテストでの成績を比較したりできます。<br></br>Pythonのみで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/atdata' target='_blank'>https://github.com/nozomuorita/atdata</a></p>
                                     <div>
                                         <p>Tools</p>
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" className='modal-img' />
@@ -213,7 +214,7 @@ function Portfolio() {
                                     <h2 class="text-uppercase">Portfolio Design</h2>
                                     <p class="item-intro text-muted">Three.jsを使用したポートフォリオサイトのデザイン例です。</p>
                                     <img class="img-fluid d-block mx-auto" src={fig3} alt="..." />
-                                    <p>Three.jsを使用しておしゃれ風のWebサイトを作成しました。<br></br>React, Three.jsを使用<br></br>Githubリンク：今後リポジトリを作成し、デプロイ予定</p>
+                                    <p>Three.jsを使用しておしゃれ風のWebサイトを作成しました。<br></br>Githubリンク：</p>
                                     <div>
                                         <p>Tools</p>
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" className='modal-img' />
@@ -245,7 +246,7 @@ function Portfolio() {
                                 <div class="modal-body">
                                     {/* <!-- Project details--> */}
                                     <h2 class="text-uppercase">AtCoder Review Bot</h2>
-                                    <p class="item-intro text-muted">AtCoderにおいて復習すべき問題をレコメンドするDiscord Botです。</p>
+                                    <p class="item-intro text-muted">AtCoderにおいて復習すべき問題をおすすめするDiscord Botです。</p>
                                     <img class="img-fluid d-block mx-auto" src={fig4} alt="..." />
                                     <p>ユーザー名などを入力すると、そのユーザーが過去に解いた問題の中から忘れていそうな問題や過去に多く間違えてしまった問題を探してきてリンクを表示するBotです。<br></br>Pythonで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/discordbot-atcoder-review' target='_blank'>https://github.com/nozomuorita/discordbot-atcoder-review</a></p>
                                     <div>
@@ -278,7 +279,7 @@ function Portfolio() {
                                     <h2 class="text-uppercase">AtCoder Perf Graph</h2>
                                     <p class="item-intro text-muted">AtCoderのマイページにパフォーマンスグラフを重ねて表示します。</p>
                                     <img class="img-fluid d-block mx-auto" src={fig5} alt="..." />
-                                    <p>マイページにパフォーマンスのグラフも表示させたいという声をちょくちょく見かけたので作成しました。<br></br>累計370インストールしていただきました！ありがとうございます。<br></br>JavaScriptで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/atcoder-perf-graph' target='_blank'>https://github.com/nozomuorita/atcoder-perf-graph</a></p>
+                                    <p>マイページにパフォーマンスのグラフも表示させたいという声をちょくちょく見かけたので作成しました。<br></br>累計800インストールありがとうございます！<br></br>JavaScriptで作成。<br></br>Githubリンク：<a href='https://github.com/nozomuorita/atcoder-perf-graph' target='_blank'>https://github.com/nozomuorita/atcoder-perf-graph</a></p>
                                     <div>
                                         <p>Tools</p>
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" className='modal-img' />
@@ -306,7 +307,7 @@ function Portfolio() {
                                 <div class="modal-body">
                                     {/* <!-- Project details--> */}
                                     <h2 class="text-uppercase">Qiita Notification Bot</h2>
-                                    <p class="item-intro text-muted">特定のユーザーがQiitaに記事を投稿したら通知するdiscord botです。</p>
+                                    <p class="item-intro text-muted">作ったけど微妙でした．．．</p>
                                     <img class="img-fluid d-block mx-auto" src={fig6} alt="..." />
                                     <p>Qiita記事を投稿したときに自動でDiscordのチャンネルに通知メッセージを送ることができます。<br></br>JavaScriptで作成。<br></br>Githubリンク：今後リポジトリを作成予定</p>
                                     <div>

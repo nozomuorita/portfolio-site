@@ -81,7 +81,7 @@ function Qualification() {
                                 普通自動車免許(AT)
                             </div>
                             <div class="card__overviewtext">
-                                2018年2月取得
+                                2021年10月取得
                             </div>
                         </div>
                     </div>

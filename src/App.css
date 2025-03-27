@@ -239,10 +239,33 @@ img {
 
 .accountUrl{
   list-style: none;
+  margin-top: 15px;
+}
+.account-item{
+  margin-bottom: 5px;
 }
 .conf{
   margin-top: 50px;
 }
 .ncsp{
-  max-width: 20vw;
+  width: 20vw;
+  min-width: 200px;
+  max-width: 300px;
+  margin-top: 15px;
+  border: solid 1px #777777;
+}
+.container-sub{
+  margin-top: 100px;
+  text-align: center;
+}
+.conference{
+  text-align: left;
+  display: inline-block;
+  list-style: circle;
+}
+.paper{
+  text-align: left;
+  display: inline-block;
+  list-style: circle;
+  max-width: 600px;
 }

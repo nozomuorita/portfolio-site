@@ -126,7 +126,7 @@ function skill() {
                     <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
                 </span>
                 <h4 class="my-3">なでしこ</h4>
-                <p class="text-muted">日本語でプログラミングができるのが面白いと思い触った経験あり。<br></br>簡単な操作であれば可能。</p>
+                <p class="text-muted">簡単な操作であれば可能。</p>
             </div>
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
