@@ -12,7 +12,7 @@
     "git": "git add . && git commit && git push origin main",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "postbuild": "cp index.html 404.html"
+    "postbuild": "node -e \"require('node:fs').copyFileSync('dist/index.html', 'dist/404.html')\""
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
