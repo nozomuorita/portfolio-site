@@ -1,158 +1,157 @@
-import React from 'react'
-import nadeshiko from "../../assets/nadeshiko.png";
+import nadeshiko from '../../assets/nadeshiko.png'
 
-function skill() {
+const deviconBaseUrl =
+  'https://cdn.jsdelivr.net/gh/devicons/devicon/icons'
+
+const skills = [
+  {
+    name: 'Python',
+    icon: `${deviconBaseUrl}/python/python-original.svg`,
+    iconClassName: 'card-img',
+    description: (
+      <>
+        研究活動や趣味で機械学習やデータ分析、データ取得、
+        <br />
+        Webアプリケーション作成に使用
+      </>
+    ),
+  },
+  {
+    name: 'React',
+    icon: `${deviconBaseUrl}/react/react-original.svg`,
+    description: (
+      <>
+        趣味でWebサイトやWebアプリ作成に使用
+        <br />
+        本サイトもReactを用いて作成
+      </>
+    ),
+  },
+  {
+    name: 'Three.js',
+    icon: `${deviconBaseUrl}/threejs/threejs-original.svg`,
+    description: (
+      <>
+        趣味でWebサイト作成に使用
+        <br />
+        「Portfolio design」に使用。
+      </>
+    ),
+  },
+  {
+    name: 'HTML',
+    icon: `${deviconBaseUrl}/html5/html5-original.svg`,
+    description: (
+      <>
+        趣味でWebサイトやWebアプリ作成に使用
+        <br />
+        本サイトもReactを用いて作成
+      </>
+    ),
+  },
+  {
+    name: 'CSS',
+    icon: `${deviconBaseUrl}/css3/css3-original.svg`,
+    description: (
+      <>
+        趣味でWebサイトやWebアプリ作成に使用
+        <br />
+        本サイトもReactを用いて作成
+      </>
+    ),
+  },
+  {
+    name: 'JavaScript',
+    icon: `${deviconBaseUrl}/javascript/javascript-original.svg`,
+    iconClassName: 'card-img',
+    description: '拡張機能の作成やWebサイト作成に使用',
+  },
+  {
+    name: 'Github',
+    icon: `${deviconBaseUrl}/github/github-original.svg`,
+    description: (
+      <>
+        コード管理に使用
+        <br />
+        また、Webサイト・アプリのデプロイにGithub Pagesを使用
+      </>
+    ),
+  },
+  {
+    name: 'VSCode',
+    icon: `${deviconBaseUrl}/vscode/vscode-original.svg`,
+    description: 'エディタとして使用',
+  },
+  {
+    name: 'R',
+    icon: `${deviconBaseUrl}/r/r-original.svg`,
+    description: '研究活動の一部で使用',
+  },
+  {
+    name: 'LATEX',
+    icon: `${deviconBaseUrl}/latex/latex-original.svg`,
+    description: '論文執筆時に使用',
+  },
+  {
+    name: 'C',
+    icon: `${deviconBaseUrl}/c/c-original.svg`,
+    description: (
+      <>
+        大学の講義で使用
+        <br />
+        また、センサから情報を読み取りロボットを動かすなどに
+        <br />
+        使用
+      </>
+    ),
+  },
+  {
+    name: 'C++',
+    icon: `${deviconBaseUrl}/cplusplus/cplusplus-original.svg`,
+    description: '競技プログラミングで使用',
+  },
+  {
+    name: 'なでしこ',
+    icon: nadeshiko,
+    iconClassName: 'nadesiko-icon',
+    description: '簡単な操作であれば可能。',
+  },
+  {
+    name: 'Vim',
+    icon: `${deviconBaseUrl}/vim/vim-original.svg`,
+    description: 'VSCodeと併用。',
+  },
+  {
+    name: 'Whitespace',
+    icon: '',
+    description: '遊び心で使用',
+  },
+]
+
+function Skill() {
   return (
-    <>
-      <section className='page-section' id='skill'>
-        <div className='container'>
-          <div className='text-center'>
-            <h2 className='section-heading text-uppercase'>Skill</h2>
-            <h3 className='section-subheading text-muted'>My programming skill</h3>
-          </div>
-          <div className='row text-center'>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" className='card-img' />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">Python</h4>
-                <p class="text-muted">研究活動や趣味で機械学習やデータ分析、データ取得、<br></br>Webアプリケーション作成に使用</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">React</h4>
-                <p class="text-muted">趣味でWebサイトやWebアプリ作成に使用<br></br>本サイトもReactを用いて作成</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">Three.js</h4>
-                <p class="text-muted">趣味でWebサイト作成に使用<br></br>「Prtfolio design」に使用。</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">HTML</h4>
-                <p class="text-muted">趣味でWebサイトやWebアプリ作成に使用<br></br>本サイトもReactを用いて作成</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">CSS</h4>
-                <p class="text-muted">趣味でWebサイトやWebアプリ作成に使用<br></br>本サイトもReactを用いて作成</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" className='card-img' />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">JavaScript</h4>
-                <p class="text-muted">拡張機能の作成やWebサイト作成に使用</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">Github</h4>
-                <p class="text-muted">コード管理に使用<br></br>また、Webサイト・アプリのデプロイにGithub Pagesを使用</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">VSCode</h4>
-                <p class="text-muted">エディタとして使用</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">R</h4>
-                <p class="text-muted">研究活動の一部で使用</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">LATEX</h4>
-                <p class="text-muted">論文執筆時に使用</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">C</h4>
-                <p class="text-muted">大学の講義で使用<br></br>また、センサから情報を読み取りロボットを動かすなどに<br></br>使用</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">C++</h4>
-                <p class="text-muted">競技プログラミングで使用</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src={nadeshiko} className='nadesiko-icon' />
-                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">なでしこ</h4>
-                <p class="text-muted">簡単な操作であれば可能。</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg" />                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">Vim</h4>
-                <p class="text-muted">VSCodeと併用。</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                <img src="" />                    {/* <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i> */}
-                </span>
-                <h4 class="my-3">Whitespace</h4>
-                <p class="text-muted">遊び心で使用</p>
-            </div>
-          </div>
+    <section className="page-section" id="skill">
+      <div className="container">
+        <div className="text-center">
+          <h2 className="section-heading text-uppercase">Skill</h2>
+          <h3 className="section-subheading text-muted">
+            My programming skill
+          </h3>
         </div>
-      </section>
-
-
-        
-          
-    </>
+        <div className="row text-center">
+          {skills.map(({ name, icon, iconClassName, description }) => (
+            <div className="col-md-4" key={name}>
+              <span className="fa-stack fa-4x">
+                <img src={icon} className={iconClassName} alt="" />
+              </span>
+              <h4 className="my-3">{name}</h4>
+              <p className="text-muted">{description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 
-export default skill
+export default Skill
