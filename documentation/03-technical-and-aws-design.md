@@ -39,13 +39,12 @@ src/
 ├─ components/          # 共通UI
 ├─ App.jsx
 └─ main.jsx
-archive/media/           # 未使用だが保管する動画・音声
 documentation/assets/    # 設計書用の図
 .github/workflows/       # CI/CDワークフロー
 dist/                    # Vite生成物（Git管理対象外）
 ```
 
-アプリケーションが使用する素材は`src/assets`へ集約し、ReactまたはCSSからimportします。固定URLで配信する必要がある素材が生じた場合のみ`public`を作成します。未使用だが保管する素材は、誤ってビルド対象にしないよう`archive/media`へ分離します。
+アプリケーションが使用する素材は`src/assets`へ集約し、ReactまたはCSSからimportします。固定URLで配信する必要がある素材が生じた場合のみ`public`を作成します。未使用だが保管する素材は、誤ってビルドやGit管理の対象にしないようリポジトリ外へ分離します。
 
 ### 3.2 コンポーネント責務
 
