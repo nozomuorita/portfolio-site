@@ -1,30 +1,46 @@
-function Footer() {
-  return (
-    <>
-        {/* <!-- Footer--> */}
-        <footer className="footer py-4">
-            <div className="container">
-                <div className="row align-items-center">
-                    <div className="col-lg-4 text-lg-start">Copyright &copy; NOZOMU ORITA</div>
-                    <div className="col-lg-4 my-3 my-lg-0">
-                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i className="fab fa-instagram"></i></a>
-                        {/* <a className="btn-dark btn-social mx-2 x-icon" href="https://twitter.com/account_0818" aria-label="X" target='_blank'><svg viewBox="0 0 1800 1800" xmlns="http://www.w3.org/2000/svg">
-                            <rect height="100%" width="100%" rx="10%" ry="10%"/>
-                            <path d="m1014.2 805.8 446.7-519.3h-105.9l-387.9 450.9-309.8-450.9h-357.3l468.5 681.8-468.5 544.6h105.9l409.6-476.2 327.2 476.2h357.3zm-145 168.5-47.5-67.9-377.7-540.2h162.6l304.8 436 47.5 67.9 396.2 566.7h-162.6z" fill="#fff"/>
-                        </svg></a>
-                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a> */}
-                    </div>
-                    <div className="col-lg-4 text-lg-end">
-                        <a className="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a className="link-dark text-decoration-none" href="#!">Terms of Use</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+import GitHubIcon from '@mui/icons-material/GitHub'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 
-    </>
+function Footer() {
+  const currentYear = new Date().getFullYear()
+
+  return (
+    <footer className="footer site-footer">
+      <div className="container site-footer__inner">
+        <div className="site-footer__identity">
+          <span className="site-footer__name">NOZOMU ORITA</span>
+          <span className="site-footer__copyright">
+            © {currentYear} All rights reserved.
+          </span>
+        </div>
+
+        <nav className="site-footer__links" aria-label="Footer navigation">
+          <a
+            className="site-footer__icon-link"
+            href="https://github.com/nozomuorita"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub profile"
+          >
+            <GitHubIcon />
+          </a>
+          <a
+            className="site-footer__icon-link"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram profile"
+          >
+            <InstagramIcon />
+          </a>
+          <a className="site-footer__top-link" href="#top">
+            Back to top
+            <KeyboardArrowUpIcon fontSize="small" aria-hidden="true" />
+          </a>
+        </nav>
+      </div>
+    </footer>
   )
 }
 

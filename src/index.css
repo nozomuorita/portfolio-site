@@ -6,6 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 code {
@@ -10914,16 +10921,43 @@ p {
   height: 1.5rem;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
+  position: relative;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.95rem;
   color: #fff;
   letter-spacing: 0.0625em;
+  transition: color 160ms ease;
 }
-#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ff00bf;/*#ffc800;*/
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link:focus-visible {
+  color: #8bd7ff;
+  text-shadow: 0 0 18px rgba(139, 215, 255, 0.45);
+}
+#mainNav .navbar-nav .nav-item .nav-link:focus-visible {
+  outline: 2px solid rgba(139, 215, 255, 0.75);
+  outline-offset: 3px;
 }
 
 @media (min-width: 992px) {
+  #mainNav .navbar-nav .nav-item .nav-link::after {
+    position: absolute;
+    bottom: 0.2rem;
+    left: 50%;
+    width: 1.5rem;
+    height: 1px;
+    background: #8bd7ff;
+    content: "";
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0);
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link.active::after,
+  #mainNav .navbar-nav .nav-item .nav-link:hover::after,
+  #mainNav .navbar-nav .nav-item .nav-link:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
   #mainNav {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -10958,49 +10992,50 @@ p {
     margin-right: 0;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  #mainNav .navbar-nav .nav-item .nav-link,
+  #mainNav .navbar-nav .nav-item .nav-link::after {
+    transition: none;
+  }
+}
+
 header.masthead {
-  /* padding-top: 10.5rem; */
-  padding-bottom: 5rem;
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  padding-bottom: 0;
+  overflow: hidden;
   text-align: center;
   color: #fff;
-  /* background-image: url("assets/img/header-bg.jpg"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
 }
+
+@media (max-aspect-ratio: 3 / 4) {
+  header.masthead {
+    height: 78vh;
+    height: 78svh;
+  }
+}
 header.masthead .masthead-subheading {
-  font-size: 1.5rem;
-  font-style: italic;
-  line-height: 1.5rem;
-  margin-bottom: 25px;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
 }
 header.masthead .masthead-heading {
-  font-size: 3.25rem;
-  font-weight: 700;
-  line-height: 3.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-@media (min-width: 768px) {
-  /* header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
-  } */
-  header.masthead .masthead-subheading {
-    font-size: 2.25rem;
-    font-style: italic;
-    line-height: 2.25rem;
-    margin-bottom: 2rem;
-  }
-  header.masthead .masthead-heading {
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 4.5rem;
-    margin-bottom: 4rem;
-  }
+  font-size: clamp(2.75rem, 5.5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
 }
 #portfolio .portfolio-item {
   max-width: 26rem;
@@ -11273,9 +11308,10 @@ header.masthead .masthead-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("../public/contact.webp");
+  background-image: url("./assets/contact/cloudy-sky-background.webp");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 section#contact .section-heading {
   color: #fff;

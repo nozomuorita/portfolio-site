@@ -1,4 +1,4 @@
-import nadeshiko from '../../assets/nadeshiko.png'
+import nadeshiko from '../../assets/skills/nadeshiko.png'
 
 const deviconBaseUrl =
   'https://cdn.jsdelivr.net/gh/devicons/devicon/icons'

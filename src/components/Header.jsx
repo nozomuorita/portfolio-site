@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic'
-import logoImage from '../../public/Planet Arcadia (1)_1.png'
-import audioSource from '../../public/audio.mp3'
+import logoImage from '../assets/brand/site-logo.png'
+import audioSource from '../assets/hero/background-music.mp3'
 
 const navigationItems = [
   { href: '#top', label: 'TOP' },

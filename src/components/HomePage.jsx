@@ -1,4 +1,4 @@
-import video from '../../public/skyscrapers_-_98151 (720p)-24b0a77a.mp4'
+import video from '../assets/hero/city-nightscape.mp4'
 import About from './section/About'
 import Contact from './section/Contact'
 import Footer from './section/Footer'
@@ -14,16 +14,19 @@ function HomePage() {
           <source src={video} type="video/mp4" />
         </video>
 
+        <div className="overlay" />
+
         <div className="container title-text">
           <div className="masthead-subheading">Welcome To My PortFolio</div>
           <div className="masthead-heading text-uppercase">NOZOMU ORITA</div>
-          <a className="btn btn-primary btn-xl text-uppercase" href="#about">
-            Tell Me More
+          <a className="btn hero-cta" href="#about">
+            <span>Tell Me More</span>
+            <span className="hero-cta__arrow" aria-hidden="true">
+              ↓
+            </span>
           </a>
         </div>
       </header>
-
-      <div className="overlay" />
       <About />
       <Portfolio />
       <Qualification />
