@@ -74,6 +74,8 @@ GitHub Pagesへの公開時だけViteの`base`を`/portfolio-site/`に切り替�
 
 現在のGitHub Pagesでは、`main`へのpushを契機にGitHub Actionsが`npm ci`、lint、production buildを実行し、`dist/`を直接デプロイします。ビルド成果物を`docs/`へコピーしてGit管理する運用は廃止します。
 
+GitHub Pages用ワークフローの各処理、旧方式からの変更点、日常運用と障害対応は[04-github-pages-ci-cd.md](04-github-pages-ci-cd.md)を参照してください。
+
 ## 4. AWS構成の結論
 
 このプロジェクトでは、次の構成を推奨します。
