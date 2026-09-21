@@ -41,7 +41,7 @@ src/
 └─ main.jsx
 archive/media/           # 未使用だが保管する動画・音声
 documentation/assets/    # 設計書用の図
-docs/                    # GitHub Pages用生成物
+.github/workflows/       # CI/CDワークフロー
 dist/                    # Vite生成物（Git管理対象外）
 ```
 
@@ -71,7 +71,9 @@ dist/                    # Vite生成物（Git管理対象外）
 | 成果物 | `dist/` |
 | Node.js | GitHub Actionsとローカルで同じLTSメジャーバージョンに固定 |
 
-AWS移行後はルートパスで配信するため、Viteの`base`は`/`を基本とします。現在のGitHub Pages用条件分岐は、移行完了後に削除します。
+GitHub Pagesへの公開時だけViteの`base`を`/portfolio-site/`に切り替えます。ローカルとAWSでは`/`を使用し、GitHub Pages用の条件分岐はAWS移行完了後に削除します。
+
+現在のGitHub Pagesでは、`main`へのpushを契機にGitHub Actionsが`npm ci`、lint、production buildを実行し、`dist/`を直接デプロイします。ビルド成果物を`docs/`へコピーしてGit管理する運用は廃止します。
 
 ## 4. AWS構成の結論
 
