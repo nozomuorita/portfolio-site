@@ -84,9 +84,16 @@ function About() {
                                 <h4 className="subheading">北海道日高郡新ひだか町</h4>
                             </div>
                             <div className="timeline-body">
-                                <p className="text-muted">
-                                    小学2年生から6年生までそろばんに取り組み、中学では3年間、男子バスケットボール部に所属。
-                                </p>
+                                <dl className="timeline-activities" aria-label="幼少期の活動">
+                                    <div className="timeline-activity">
+                                        <dt>小学2〜6年</dt>
+                                        <dd>そろばん</dd>
+                                    </div>
+                                    <div className="timeline-activity">
+                                        <dt>中学1〜3年</dt>
+                                        <dd>男子バスケットボール部</dd>
+                                    </div>
+                                </dl>
                             </div>
                         </div>
                     </li>
