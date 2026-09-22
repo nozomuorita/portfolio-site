@@ -1,6 +1,6 @@
-import CloudIcon from '@mui/icons-material/Cloud'
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar'
 import abacus from '../../assets/qualifications/abacus-certification.jpg'
+import awsCloudPractitioner from '../../assets/qualifications/aws-cloud-practitioner-badge.png'
 import eiken from '../../assets/qualifications/eiken-logo.jpg'
 import g from '../../assets/qualifications/g-test-logo.png'
 import ipa from '../../assets/qualifications/ipa-logo.jpg'
@@ -21,8 +21,8 @@ const qualifications = [
   {
     title: 'AWS Certified Cloud Practitioner',
     date: '2025年12月取得',
-    Icon: CloudIcon,
-    iconColor: '#ff9900',
+    image: awsCloudPractitioner,
+    fit: 'contain',
   },
 ]
 
