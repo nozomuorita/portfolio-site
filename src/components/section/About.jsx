@@ -84,59 +84,66 @@ function About() {
                                 <h4 className="subheading">北海道日高郡新ひだか町</h4>
                             </div>
                             <div className="timeline-body">
-                                <dl className="timeline-activities" aria-label="幼少期の活動">
-                                    <div className="timeline-activity">
-                                        <dt>小学2〜6年</dt>
-                                        <dd>そろばん</dd>
-                                    </div>
-                                    <div className="timeline-activity">
-                                        <dt>中学1〜3年</dt>
-                                        <dd>男子バスケットボール部</dd>
-                                    </div>
-                                </dl>
+                                <p className="text-muted">
+                                    小学2年生から6年生までそろばんに取り組み、中学では3年間、男子バスケットボール部に所属。
+                                </p>
                             </div>
                         </div>
                     </li>
                     <li className='timeline-inverted'>
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={highSchool} alt="..." /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={highSchool} alt="北海道立静内高等学校" /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>2016-2019</h4>
+                                <h4>2016–2019</h4>
                                 <h4 className="subheading">北海道立静内高等学校</h4>
                             </div>
-                            <div className="timeline-body"><p className="text-muted">普通科<br></br>帰宅部</p></div>
+                            <div className="timeline-body">
+                                <p className="text-muted">
+                                    普通科に在籍し、部活動には所属せずに過ごしました。
+                                </p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={ibarakiUniversity} alt="..." /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={ibarakiUniversity} alt="茨城大学" /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>2019~2023</h4>
+                                <h4>2019–2023</h4>
                                 <h4 className="subheading">茨城大学</h4>
                             </div>
-                            <div className="timeline-body"><p className="text-muted">工学部機械システム工学科<br></br>卒業論文<br></br>「データマイニングバイアスを考慮した資産運用業務の最適化」</p></div>
-                            {/* <div className="timeline-body"><p className="text-muted">工学部機械システム工学科<br></br>・機械学習・プログラミングの勉強に力を入れて取り組みました！<br></br>・機械学習ではデータを取得し、前処理をするところからモデルを評価するまでの一連の流れについて学ぶことができました。</p></div> */}
+                            <div className="timeline-body">
+                                <p className="text-muted">
+                                    工学部機械システム工学科に在籍。卒業論文では「データマイニングバイアスを考慮した資産運用業務の最適化」に取り組みました。
+                                </p>
+                            </div>
                         </div>
                     </li>
                     <li className="timeline-inverted">
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={ibarakiUniversity} alt="..." /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={ibarakiUniversity} alt="茨城大学" /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>2023~2025</h4>
+                                <h4>2023–2025</h4>
                                 <h4 className="subheading">茨城大学大学院</h4>
                             </div>
-                            <div className="timeline-body"><p className="text-muted">理工学研究科<br></br>機械システム工学専攻<br></br>修士論文<br></br>「データマイニングバイアスを考慮した国内株式運用の機械学習」</p></div>
-                            {/* <div className="timeline-body"><p className="text-muted">理工学研究科機械システム工学専攻<br></br>・研究活動と競技プログラミングに力を入れて取り組みました！<br></br>・競プロを通してアルゴリズムに関する知識・実装力を身に付けました。</p></div> */}
+                            <div className="timeline-body">
+                                <p className="text-muted">
+                                    理工学研究科機械システム工学専攻に在籍。修士論文では「データマイニングバイアスを考慮した国内株式運用の機械学習」に取り組みました。
+                                </p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={professionalCareer} alt="..." /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={professionalCareer} alt="社会人生活のイメージ" /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>2025~</h4>
+                                <h4>2025–現在</h4>
                                 <h4 className="subheading">社会人</h4>
                             </div>
-                            <div className="timeline-body"><p className="text-muted">頑張ります！</p></div>
+                            <div className="timeline-body">
+                                <p className="text-muted">
+                                    新たな環境で経験を積みながら、日々学びを続けています。
+                                </p>
+                            </div>
                         </div>
                     </li>
                     {/* <li className="timeline-inverted">
