@@ -77,13 +77,17 @@ function About() {
 
                 <ul className="timeline">
                     <li>
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={hometownHorses} /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src={hometownHorses} alt="北海道新ひだか町の馬" /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
-                                <h4>出身地</h4>
+                                <h4>幼少期</h4>
                                 <h4 className="subheading">北海道日高郡新ひだか町</h4>
                             </div>
-                            <div className="timeline-body"><p className="text-muted">小学2~6年生：そろばん<br></br>中学1~3年：男子バスケットボール部</p></div>
+                            <div className="timeline-body">
+                                <p className="text-muted">
+                                    小学2年生から6年生までそろばんに取り組み、中学では3年間、男子バスケットボール部に所属。
+                                </p>
+                            </div>
                         </div>
                     </li>
                     <li className='timeline-inverted'>
