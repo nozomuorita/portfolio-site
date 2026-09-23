@@ -1,10 +1,12 @@
 # GitHub Pages CI/CD設計・運用手順書
 
-最終更新日: 2026-09-21
+最終更新日: 2026-09-23
 
 ## 1. この文書の目的
 
 本書は、ポートフォリオサイトをGitHub Pagesへ公開する現在のCI/CD構成について、次の内容を記録します。
+
+> **用語:** 現在の`docs/`は設計文書専用です。本書の「旧公開用`docs/`」は、以前GitHub Pagesへ配信していたビルド成果物ディレクトリを指します。
 
 - 旧デプロイ方式と、その問題点
 - 現在の自動デプロイ方式
@@ -25,7 +27,7 @@ mainへpush
   ↓
 ソースコードを取得
   ↓
-Node.js 20を準備
+Node.js 22を準備
   ↓
 npm ci
   ↓
@@ -38,7 +40,7 @@ dist/をPages用artifactとしてアップロード
 GitHub Pagesへデプロイ
 ```
 
-ローカルで`dist/`を`docs/`へコピーしたり、ビルド成果物をGitへコミットしたりする必要はありません。
+ローカルで`dist/`を旧公開用`docs/`へコピーしたり、ビルド成果物をGitへコミットしたりする必要はありません。
 
 公開URLは次のとおりです。
 
@@ -59,16 +61,16 @@ https://nozomuorita.github.io/portfolio-site/
   ↓
 dist/を生成
   ↓
-dist/の内容をdocs/へコピー
+dist/の内容を旧公開用docs/へコピー
   ↓
-docs/をGitへコミット
+旧公開用docs/をGitへコミット
   ↓
 mainへpush
   ↓
 GitHub Pagesがmain/docsを公開
 ```
 
-この方式でGitHub Pagesが配信していたのはReactのソースコードではなく、Gitにコミットされた`docs/`内の静的ファイルです。GitHub側でViteのビルドは行われていませんでした。
+この方式でGitHub Pagesが配信していたのはReactのソースコードではなく、Gitにコミットされた旧公開用`docs/`内の静的ファイルです。GitHub側でViteのビルドは行われていませんでした。
 
 ### 3.2 旧package.json
 
@@ -92,7 +94,7 @@ GitHub Pagesがmain/docsを公開
 
 1. `npm run build`だけを実行した場合
    - `npm run build`は`dist/`を生成するだけです。
-   - `docs/`へのコピーは`npm run rebuild`を明示的に実行しない限り行われません。
+   - 旧公開用`docs/`へのコピーは`npm run rebuild`を明示的に実行しない限り行われません。
 2. Windowsで`npm run rebuild`を実行した場合
    - `rm`と`cp`は主にLinux/macOSで使われるコマンドです。
    - 通常のWindows npm実行環境では認識されず、`rm -R docs`で停止する可能性があります。
@@ -112,7 +114,7 @@ cp -r dist docs  → 実行されない
 
 - OSによってコピー用コマンドの挙動が異なる。
 - ソース変更とビルド成果物の更新漏れが起きる。
-- `docs/`に古いハッシュ付きJS・CSSが蓄積しやすい。
+- 旧公開用`docs/`に古いハッシュ付きJS・CSSが蓄積しやすい。
 - ビルド成果物をGit管理するため、リポジトリ容量が増える。
 - ローカル環境によって生成結果が変わる可能性がある。
 - push前に手作業が必要で、手順の再現性が低い。
@@ -158,10 +160,13 @@ CIが失敗した場合はCDへ進みません。そのため、ビルドでき�
 追加ファイル:
 
 ```text
+.github/workflows/ci.yml
 .github/workflows/deploy-pages.yml
 ```
 
-現在の定義は次のとおりです。
+`ci.yml`は`main`向けPull Requestでlintとbuildだけを実行します。`deploy-pages.yml`は`main`へのpushで同じ検証を行った後、GitHub Pagesへデプロイします。
+
+`deploy-pages.yml`の定義は次のとおりです。
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -191,7 +196,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -308,13 +313,13 @@ dist/404.html
 次を文書へ反映しました。
 
 - `main`へのpushで自動デプロイされること
-- ローカルで`dist/`を`docs/`へコピーする必要がないこと
+- ローカルで`dist/`を旧公開用`docs/`へコピーする必要がないこと
 - GitHub Pages用`base`とAWS用`base`の違い
-- `docs/`をGit管理する運用を廃止したこと
+- 旧公開用`docs/`をGit管理する運用を廃止したこと
 
 ### 5.5 docsディレクトリの削除
 
-新しいActions方式でデプロイできることを確認した後、旧ビルド成果物だった`docs/`を削除しました。
+新しいActions方式でデプロイできることを確認した後、旧公開用`docs/`のビルド成果物を削除しました。その後、`docs/`という名前は設計文書ディレクトリとして再利用しています。
 
 削除前に新方式を動作確認した理由は、設定変更と旧公開物削除を同時に行ってサイトが停止するリスクを避けるためです。
 
@@ -335,7 +340,7 @@ on:
 - `push.branches: main`: `main`へpushされた場合に自動実行する。
 - `workflow_dispatch`: GitHubのActions画面から手動実行できるようにする。
 
-現時点ではPull Request作成時の自動検証は設定していません。
+Pull Request作成時は、別の`CI`ワークフローがlintとbuildを実行します。Pull RequestからGitHub Pagesへのデプロイは行いません。
 
 ### 6.2 権限
 
@@ -377,11 +382,11 @@ GitHubが起動した一時的なUbuntu環境へ、対象コミットのソー�
 ```yaml
 uses: actions/setup-node@v7
 with:
-  node-version: 20
+  node-version: 22
   cache: npm
 ```
 
-- Node.js 20を利用する。
+- Node.js 22を利用する。
 - npmのダウンロードキャッシュを有効にする。
 - キャッシュはインストール時間を短縮するもので、`node_modules`をGit管理するものではない。
 
@@ -477,9 +482,9 @@ API上の`build_type`は`workflow`です。
 4. `18aaa09`としてコミットし、`main`へpushした。
 5. GitHub PagesのSourceを`GitHub Actions`へ変更した。
 6. build・deployが成功し、新しいHTMLが`/portfolio-site/assets/...`を参照することを確認した。
-7. 不要になった旧`docs/`を削除した。
+7. 不要になった旧公開用`docs/`を削除した。
 8. `b0eef5a`としてコミットし、再度pushした。
-9. `docs/`削除後もbuild・deployが成功することを確認した。
+9. 旧公開用`docs/`削除後もbuild・deployが成功することを確認した。
 
 ## 9. 日常の更新手順
 
@@ -504,7 +509,7 @@ git commit -m "変更内容"
 git push origin main
 ```
 
-push後の`dist/`生成とGitHub Pagesへの反映はActionsが担当します。`docs/`の作成やコミットは行いません。
+push後の`dist/`生成とGitHub Pagesへの反映はActionsが担当します。旧公開用`docs/`の作成やコミットは行いません。設計文書としての`docs/`は通常のソースと同様にGit管理します。
 
 ### 9.3 デプロイ結果の確認
 
@@ -521,7 +526,7 @@ push後の`dist/`生成とGitHub Pagesへの反映はActionsが担当します�
 
 - `package.json`と`package-lock.json`が一致しているか。
 - 依存関係追加後に`package-lock.json`もコミットしたか。
-- Node.js 20で利用できるパッケージか。
+- Node.js 22で利用できるパッケージか。
 
 ローカル確認:
 
@@ -593,7 +598,7 @@ GitHub Actionsの`workflow_dispatch`から、同じコミットのワークフ�
 
 ### 12.1 Pull Request時のCI
 
-現在は`main`へのpushだけを対象としています。将来はPull RequestでLintとbuildだけを実行し、マージ後にだけdeployする構成へ分けると、公開前に問題を検出できます。
+`.github/workflows/ci.yml`が`main`ブランチ向けのPull Requestを対象に、依存関係のインストール、lint、buildを実行します。デプロイ処理を含めないため、Pull Requestの内容が公開環境へ反映されることはありません。
 
 ### 12.2 mainブランチ保護
 
@@ -640,7 +645,9 @@ AWS側の詳細は[03-technical-and-aws-design.md](03-technical-and-aws-design.m
 
 | ファイル | 役割 |
 | --- | --- |
+| `.github/workflows/ci.yml` | Pull Requestでlintとbuildを実行するCI |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages CI/CD本体 |
+| `.nvmrc` | ローカルで使用するNode.jsメジャーバージョン |
 | `vite.config.js` | 環境ごとの公開ベースパス |
 | `package.json` | lint、build、postbuildコマンド |
 | `package-lock.json` | CIで再現する依存関係の固定 |

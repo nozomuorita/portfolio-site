@@ -1,6 +1,6 @@
 # 技術・AWS構成設計書
 
-最終更新日: 2026-09-21
+最終更新日: 2026-09-23
 
 ## 1. 設計方針
 
@@ -39,7 +39,7 @@ src/
 ├─ components/          # 共通UI
 ├─ App.jsx
 └─ main.jsx
-documentation/assets/    # 設計書用の図
+docs/assets/             # 設計書用の図
 .github/workflows/       # CI/CDワークフロー
 dist/                    # Vite生成物（Git管理対象外）
 ```
@@ -72,7 +72,7 @@ dist/                    # Vite生成物（Git管理対象外）
 
 GitHub Pagesへの公開時だけViteの`base`を`/portfolio-site/`に切り替えます。ローカルとAWSでは`/`を使用し、GitHub Pages用の条件分岐はAWS移行完了後に削除します。
 
-現在のGitHub Pagesでは、`main`へのpushを契機にGitHub Actionsが`npm ci`、lint、production buildを実行し、`dist/`を直接デプロイします。ビルド成果物を`docs/`へコピーしてGit管理する運用は廃止します。
+現在のGitHub Pagesでは、`main`へのpushを契機にGitHub Actionsが`npm ci`、lint、production buildを実行し、`dist/`を直接デプロイします。ビルド成果物を旧公開用`docs/`へコピーしてGit管理する運用は廃止しています。現在の`docs/`は設計文書専用です。
 
 GitHub Pages用ワークフローの各処理、旧方式からの変更点、日常運用と障害対応は[04-github-pages-ci-cd.md](04-github-pages-ci-cd.md)を参照してください。
 
@@ -226,12 +226,13 @@ flowchart LR
 
 ## 11. Infrastructure as Code
 
-AWS構築時は、コンソールで一度きりの設定を積み重ねず、AWS CDKまたはTerraformで管理することを推奨します。初期候補は、既存のJavaScript知識を利用できるAWS CDK（TypeScript）です。
+AWSリソースはAWS CDK（TypeScript）で管理します。定義は`infra/`へ分離し、サイト本体とは独立して検証・デプロイできる構成にします。
 
-ただし、IaCの導入はサイト内容の刷新を妨げない順番で行います。最初に画面を完成させ、その後にAWS構成をコード化します。
+初期スタックでは、非公開S3バケット、CloudFront、OACだけを構築します。独自ドメイン、ACM証明書、Route 53、Contact APIは、CloudFront標準ドメインでの配信確認後に追加します。S3バケットには`RETAIN`を設定し、スタックの削除だけで公開データが消えないようにします。
+
+サイトが未完成でもAWS環境への継続的なデプロイを開始できるよう、画面改修とインフラ変更は別の変更単位として進めます。AWSでの動作確認が完了するまではGitHub Pagesも維持します。
 
 ## 12. 実装前の決定事項
 
 1. 独自ドメインの有無とドメイン名。
-2. AWSリソースをCDKとTerraformのどちらで管理するか。
-3. 本番反映を`main`への直接pushとPull Request mergeのどちらに限定するか。
+2. 本番反映を`main`への直接pushとPull Request mergeのどちらに限定するか。
