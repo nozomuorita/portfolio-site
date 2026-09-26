@@ -226,9 +226,9 @@ flowchart LR
 
 ## 11. Infrastructure as Code
 
-AWSリソースはAWS CDK（TypeScript）で管理します。定義は`infra/`へ分離し、サイト本体とは独立して検証・デプロイできる構成にします。
+AWSリソースはAWS CDK（TypeScript）で管理します。定義は`infra/`へ分離し、サイト本体とは独立して検証・デプロイできる構成にします。学習段階では[infra/LEARNING_ROADMAP.md](../infra/LEARNING_ROADMAP.md)に従い、1回の作業で原則1つのStepだけ追加します。
 
-初期スタックでは、非公開S3バケット、CloudFront、OACだけを構築します。独自ドメイン、ACM証明書、Route 53、Contact APIは、CloudFront標準ドメインでの配信確認後に追加します。S3バケットには`RETAIN`を設定し、スタックの削除だけで公開データが消えないようにします。
+非公開S3バケット、CloudFront、OAC、GitHub OIDCプロバイダー、`main`ブランチ専用のデプロイIAMロールをAWSへデプロイ済みです。S3には`RETAIN`、パブリックアクセスブロック、SSE-S3暗号化、HTTPS強制を明示しています。GitHub ActionsのAWSデプロイWorkflowは追加済みで、初回動作確認を残しています。独自ドメイン、ACM証明書、Route 53、Contact APIは後続Stepで必要性を判断します。
 
 サイトが未完成でもAWS環境への継続的なデプロイを開始できるよう、画面改修とインフラ変更は別の変更単位として進めます。AWSでの動作確認が完了するまではGitHub Pagesも維持します。
 
