@@ -6,6 +6,7 @@
     "node": ">=22 <23"
   },
   "scripts": {
+    "bootstrap": "cdk bootstrap",
     "build": "tsc --noEmit",
     "synth": "cdk synth",
     "diff": "cdk diff",

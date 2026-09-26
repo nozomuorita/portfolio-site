@@ -1,12 +1,8 @@
-import {
-  CfnOutput,
-  RemovalPolicy,
-  Stack,
-  StackProps,
-  aws_cloudfront as cloudfront,
-  aws_cloudfront_origins as origins,
-  aws_s3 as s3,
-} from 'aws-cdk-lib';
+import { CfnOutput, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
+import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
+import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
+import * as iam from 'aws-cdk-lib/aws-iam';
+import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 
 export class PortfolioSiteStack extends Stack {
@@ -17,16 +13,15 @@ export class PortfolioSiteStack extends Stack {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
       enforceSSL: true,
-      objectOwnership: s3.ObjectOwnership.BUCKET_OWNER_ENFORCED,
       removalPolicy: RemovalPolicy.RETAIN,
-      versioned: false,
     });
 
+    // Step 7: OACを使い、非公開S3のコンテンツをCloudFrontからだけ配信します。
     const siteOrigin = origins.S3BucketOrigin.withOriginAccessControl(
       siteBucket,
     );
 
-    const distribution = new cloudfront.Distribution(
+    const siteDistribution = new cloudfront.Distribution(
       this,
       'SiteDistribution',
       {
@@ -40,24 +35,67 @@ export class PortfolioSiteStack extends Stack {
           viewerProtocolPolicy:
             cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         },
-        httpVersion: cloudfront.HttpVersion.HTTP2_AND_3,
-        priceClass: cloudfront.PriceClass.PRICE_CLASS_200,
       },
     );
 
-    new CfnOutput(this, 'SiteBucketName', {
-      description: 'S3 bucket that stores the built website',
-      value: siteBucket.bucketName,
+    // Step 9a: GitHub ActionsがAWSへOIDC認証するためのプロバイダーです。
+    const githubOidcProvider = new iam.CfnOIDCProvider(
+      this,
+      'GitHubOidcProvider',
+      {
+        url: 'https://token.actions.githubusercontent.com',
+        clientIdList: ['sts.amazonaws.com'],
+      },
+    );
+
+    // Step 9b: このリポジトリのmainブランチだけが使用できるデプロイロールです。
+    const githubDeployRole = new iam.Role(this, 'GitHubDeployRole', {
+      roleName: 'PortfolioSiteGitHubDeployRole',
+      description:
+        'Deploys the portfolio site from the GitHub Actions main branch workflow',
+      assumedBy: new iam.WebIdentityPrincipal(githubOidcProvider.attrArn, {
+        StringEquals: {
+          'token.actions.githubusercontent.com:aud': 'sts.amazonaws.com',
+          'token.actions.githubusercontent.com:sub':
+            'repo:nozomuorita/portfolio-site:ref:refs/heads/main',
+        },
+      }),
     });
 
-    new CfnOutput(this, 'DistributionId', {
-      description: 'CloudFront distribution ID used for cache invalidation',
-      value: distribution.distributionId,
-    });
+    githubDeployRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: [
+          's3:GetBucketLocation',
+          's3:ListBucket',
+          's3:ListBucketMultipartUploads',
+        ],
+        resources: [siteBucket.bucketArn],
+      }),
+    );
 
-    new CfnOutput(this, 'DistributionDomainName', {
-      description: 'CloudFront domain used before configuring a custom domain',
-      value: distribution.distributionDomainName,
+    githubDeployRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: [
+          's3:AbortMultipartUpload',
+          's3:DeleteObject',
+          's3:GetObject',
+          's3:ListMultipartUploadParts',
+          's3:PutObject',
+        ],
+        resources: [siteBucket.arnForObjects('*')],
+      }),
+    );
+
+    githubDeployRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ['cloudfront:CreateInvalidation'],
+        resources: [siteDistribution.distributionArn],
+      }),
+    );
+
+    new CfnOutput(this, 'GitHubDeployRoleArn', {
+      description: 'IAM role assumed by the GitHub Actions deployment workflow',
+      value: githubDeployRole.roleArn,
     });
   }
 }

@@ -9,7 +9,7 @@ new PortfolioSiteStack(app, 'PortfolioSiteStack', {
     account: process.env.CDK_DEFAULT_ACCOUNT,
     region: process.env.CDK_DEFAULT_REGION ?? 'ap-northeast-1',
   },
-  description: 'Private S3 and CloudFront hosting for the portfolio site',
+  description: 'AWS CDK learning stack for the portfolio site',
 });
 
 cdk.Tags.of(app).add('Project', 'portfolio-site');
