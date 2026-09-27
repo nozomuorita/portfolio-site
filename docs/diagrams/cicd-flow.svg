@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">ポートフォリオサイト CI/CDフロー</title>
+  <desc id="desc">Pull Requestでは検証だけを行い、mainへのpushではGitHub PagesとAWSへ別々のGitHub Actions Workflowで公開する流れ</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071a2d"/><stop offset="1" stop-color="#102e4d"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-opacity=".25"/></filter>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#63d8ff"/></marker>
+    <marker id="g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#65e6ad"/></marker>
+    <style>
+      .title{font:700 38px 'Segoe UI',sans-serif;fill:#fff}.sub{font:400 18px 'Segoe UI',sans-serif;fill:#aac5d9}
+      .lane{fill:#0d243b;stroke:#365a78;stroke-width:2}.box{fill:#14324f;stroke:#63d8ff;stroke-width:2;filter:url(#s)}
+      .green{stroke:#65e6ad}.purple{stroke:#c4a4ff}.h{font:700 22px 'Segoe UI',sans-serif;fill:#fff}.t{font:400 16px 'Segoe UI',sans-serif;fill:#d9e9f4}.sm{font:400 14px 'Segoe UI',sans-serif;fill:#aac5d9}
+      .lab{font:700 15px 'Segoe UI',sans-serif;fill:#8fe7ff}.arr{fill:none;stroke:#63d8ff;stroke-width:4;marker-end:url(#a)}.arrg{fill:none;stroke:#65e6ad;stroke-width:4;marker-end:url(#g)}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <text x="70" y="68" class="title">Portfolio Site — CI/CD Flow</text>
+  <text x="70" y="105" class="sub">GitHub Actions / Pull Requestは検証、mainへのpushは2系統へ自動公開</text>
+
+  <rect x="55" y="145" width="1490" height="285" rx="24" class="lane"/>
+  <text x="85" y="184" class="lab">PULL REQUEST → CI ONLY</text>
+  <rect x="105" y="235" width="245" height="120" rx="16" class="box"/>
+  <text x="145" y="282" class="h">Pull Request</text><text x="145" y="317" class="t">target: main</text>
+  <rect x="475" y="215" width="300" height="160" rx="16" class="box"/>
+  <text x="515" y="260" class="h">CI Workflow</text><text x="515" y="296" class="t">Checkout / Node 22</text><text x="515" y="328" class="t">npm ci</text><text x="515" y="360" class="sm">contents: read</text>
+  <rect x="900" y="215" width="300" height="160" rx="16" class="box"/>
+  <text x="940" y="260" class="h">Quality Gate</text><text x="940" y="296" class="t">npm run lint</text><text x="940" y="328" class="t">npm run build</text><text x="940" y="360" class="sm">公開環境は変更しない</text>
+  <rect x="1320" y="235" width="170" height="120" rx="60" class="box green"/>
+  <text x="1362" y="290" class="h">PASS</text><text x="1352" y="322" class="sm">merge可能</text>
+  <path d="M350 295H465M775 295H890M1200 295H1310" class="arr"/>
+
+  <rect x="55" y="465" width="1490" height="450" rx="24" class="lane"/>
+  <text x="85" y="504" class="lab">MAIN PUSH → TWO INDEPENDENT DEPLOYMENTS</text>
+  <rect x="105" y="620" width="245" height="120" rx="16" class="box green"/>
+  <text x="155" y="666" class="h">Push</text><text x="155" y="701" class="t">branch: main</text>
+
+  <rect x="465" y="540" width="330" height="155" rx="16" class="box purple"/>
+  <text x="505" y="582" class="h">Deploy to Pages</text><text x="505" y="616" class="t">npm ci → lint → build</text><text x="505" y="647" class="sm">GITHUB_PAGES=true</text><text x="505" y="675" class="sm">base=/portfolio-site/</text>
+  <rect x="920" y="530" width="330" height="175" rx="16" class="box purple"/>
+  <text x="960" y="572" class="h">GitHub Pages</text><text x="960" y="606" class="t">Configure Pages</text><text x="960" y="638" class="t">Upload dist artifact</text><text x="960" y="670" class="t">Deploy Pages</text>
+  <rect x="1360" y="558" width="135" height="120" rx="60" class="box green"/>
+  <text x="1389" y="614" class="h">LIVE</text><text x="1384" y="646" class="sm">Pages</text>
+
+  <rect x="465" y="735" width="330" height="155" rx="16" class="box green"/>
+  <text x="505" y="777" class="h">Deploy to AWS</text><text x="505" y="811" class="t">npm ci → lint → build</text><text x="505" y="842" class="sm">base=/</text><text x="505" y="870" class="sm">OIDC / id-token: write</text>
+  <rect x="920" y="725" width="330" height="175" rx="16" class="box green"/>
+  <text x="960" y="767" class="h">AWS Deploy</text><text x="960" y="801" class="t">Assume IAM Role</text><text x="960" y="833" class="t">S3 sync --delete</text><text x="960" y="865" class="t">CloudFront invalidate /*</text>
+  <rect x="1360" y="752" width="135" height="120" rx="60" class="box green"/>
+  <text x="1389" y="808" class="h">LIVE</text><text x="1378" y="840" class="sm">AWS</text>
+
+  <path d="M350 680C405 680 405 617 455 617" class="arrg"/>
+  <path d="M350 680C405 680 405 812 455 812" class="arrg"/>
+  <path d="M795 617H910M1250 617H1350M795 812H910M1250 812H1350" class="arrg"/>
+
+  <text x="85" y="954" class="sm">現在は移行確認のため二重公開。各Workflowは独立し、同一公開先へのデプロイはconcurrencyで直列化。</text>
+</svg>

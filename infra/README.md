@@ -18,7 +18,7 @@ AWS上の`PortfolioSiteStack`には、非公開S3からCloudFront経由でポー
 - CDK Bootstrap: 実施済み
 - `PortfolioSiteStack`: デプロイ済み（S3、バケットポリシー、CloudFront、OAC）
 - CloudFront URL: <https://d2ee4b3vm96nrw.cloudfront.net>
-- 現在のサイト配置方法: 手動配置済み。GitHub Actionsによる自動配置はWorkflow追加済み・初回動作確認待ち
+- 現在のサイト配置方法: GitHub ActionsによるS3同期とCloudFrontキャッシュ無効化を動作確認済み
 
 今後の追加順序と現在位置は[LEARNING_ROADMAP.md](LEARNING_ROADMAP.md)で管理します。
 

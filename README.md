@@ -20,7 +20,7 @@ npm run build
 
 ## デプロイ
 
-`main`ブランチへpushすると、GitHub Actionsが依存関係のインストール、lint、本番ビルドを実行します。現在は移行確認期間のため、GitHub Pagesへの公開と、AWSのS3・CloudFrontへの公開を別Workflowで実行します。AWS側の初回自動デプロイ確認後にGitHub Pagesを停止します。
+`main`ブランチへpushすると、GitHub Actionsが依存関係のインストール、lint、本番ビルドを実行します。現在は移行確認期間のため、GitHub Pagesへの公開と、AWSのS3・CloudFrontへの公開を別Workflowで実行します。AWS側の自動デプロイは動作確認済みで、正式な公開先をAWSへ切り替えると判断した段階でGitHub Pagesの停止を検討します。
 
 `main`ブランチ向けのPull Requestでは、GitHub Actionsが`npm ci`、lint、buildだけを実行し、AWSへはデプロイしません。ビルド成果物を旧公開用`docs/`へコピーする必要はなく、現在の`docs/`は設計文書専用です。
 
